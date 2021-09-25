@@ -1,3 +1,8 @@
+import Versions.activity_version
+import Versions.dagger_version
+import Versions.fragment_version
+import Versions.retrofit2_rx_version
+
 object ApplicationId {
     val id = "com.stockbit.hiring"
 }
@@ -33,11 +38,11 @@ object Versions {
     val junit = "4.12"
     val androidTestRunner = "1.1.2-alpha02"
     val espressoCore = "3.2.0-alpha02"
-    val retrofit = "2.8.1"
+    val retrofit = "2.9.0"
     val retrofitCoroutines = "0.9.2"
-    val retrofitGson = "2.8.1"
+    val retrofitGson = "2.9.0"
     val gson = "2.8.5"
-    val okHttp = "3.12.1"
+    val okHttp = "4.9.0"
     val coroutines = "1.4.3"
     val koin = "2.0.1"
     val timber = "4.7.1"
@@ -53,6 +58,13 @@ object Versions {
     val fragmentTest = "1.1.0-alpha06"
     val databinding = "3.3.2"
     val material = "1.4.0"
+    val rxAndroid = "2.1.1"
+    val rxJava = "2.2.10"
+    val paging_version = "2.1.2"
+    val dagger_version = "2.35"
+    val fragment_version = "1.3.6"
+    val activity_version = "1.3.1"
+    val retrofit2_rx_version = "2.6.1"
 }
 
 object Libraries {
@@ -71,7 +83,19 @@ object Libraries {
     // GLIDE
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 
-    val material = "com.google.android.material:material:${Versions.material}"
+    val rxAndroid =  "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
+    val rxJava =  "io.reactivex.rxjava2:rxjava:${Versions.rxJava}"
+    val retrofitRx =  "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_rx_version"
+
+
+    val paging =  "androidx.paging:paging-runtime-ktx:${Versions.paging_version}"
+    val pagingRx = "androidx.paging:paging-rxjava2-ktx:${Versions.paging_version}"
+
+    val dagger = "com.google.dagger:hilt-android:$dagger_version"
+    val daggerCompiler =  "com.google.dagger:hilt-android-compiler:$dagger_version"
+    val fragment =  "androidx.fragment:fragment-ktx:$fragment_version"
+    val activity = "androidx.activity:activity-ktx:$activity_version"
+
 }
 
 object KotlinLibraries {
@@ -91,6 +115,7 @@ object AndroidLibraries {
     val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
     val navigation = "androidx.navigation:navigation-ui-ktx:${Versions.nav}"
     val navigationFrag = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"
+    val material = "com.google.android.material:material:${Versions.material}"
 }
 
 object TestLibraries {

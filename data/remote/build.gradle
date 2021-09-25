@@ -19,4 +19,9 @@ dependencies {
     testImplementation TestLibraries.junit
     testImplementation TestLibraries.koin
     testImplementation TestLibraries.mockWebServer
+
+    implementation Libraries.rxAndroid
+    implementation Libraries.rxJava
+    implementation Libraries.retrofitRx
+
 }

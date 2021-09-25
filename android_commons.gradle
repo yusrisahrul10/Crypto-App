@@ -1,4 +1,6 @@
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion Versions.compileSdk
@@ -15,11 +17,30 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            buildConfigField 'String', 'baseUrl', '"https://min-api.cryptocompare.com/"'
         }
+        debug {
+            buildConfigField 'String', 'baseUrl', '"https://min-api.cryptocompare.com/"'
+        }
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
     implementation KotlinLibraries.kotlin
-    implementation Libraries.material
+    implementation AndroidLibraries.material
+    implementation Libraries.dagger
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt Libraries.daggerCompiler
+    implementation Libraries.activity
+    implementation Libraries.fragment
+
+    implementation Libraries.paging
+    implementation Libraries.pagingRx
+    implementation Libraries.gson
+    implementation Libraries.retrofit
+    implementation Libraries.retrofitGsonConverter
+    implementation Libraries.httpLoggingInterceptor
 }

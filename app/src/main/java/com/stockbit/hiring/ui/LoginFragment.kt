@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.navigation.fragment.findNavController
 import com.stockbit.hiring.R
 import id.rizmaulana.sheenvalidator.lib.SheenValidator
-import androidx.navigation.fragment.findNavController
+
 
 class LoginFragment : Fragment() {
 

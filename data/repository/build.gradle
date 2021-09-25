@@ -20,4 +20,8 @@ dependencies {
     testImplementation TestLibraries.archCoreTest
     testImplementation TestLibraries.coroutine
     testImplementation project(Modules.commonTest)
+
+    implementation Libraries.paging
+    implementation Libraries.pagingRx
+
 }
