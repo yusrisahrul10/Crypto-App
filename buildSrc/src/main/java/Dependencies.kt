@@ -27,9 +27,9 @@ object Versions {
     val compileSdk = 30
     val minSdk = 23
     val targetSdk = 30
-    val appCompat = "1.1.0-alpha02"
+    val appCompat = "1.3.1"
     val coreKtx = "1.1.0"
-    val constraintLayout = "1.1.3"
+    val constraintLayout = "2.1.0"
     val junit = "4.12"
     val androidTestRunner = "1.1.2-alpha02"
     val espressoCore = "3.2.0-alpha02"
@@ -52,6 +52,7 @@ object Versions {
     val mockk = "1.11.0"
     val fragmentTest = "1.1.0-alpha06"
     val databinding = "3.3.2"
+    val material = "1.4.0"
 }
 
 object Libraries {
@@ -69,6 +70,8 @@ object Libraries {
     val httpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
     // GLIDE
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+
+    val material = "com.google.android.material:material:${Versions.material}"
 }
 
 object KotlinLibraries {

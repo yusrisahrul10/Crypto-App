@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 apply from: '../android_commons.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'kotlin-kapt'
+
 
 android {
     defaultConfig {
@@ -28,4 +32,9 @@ dependencies {
     implementation AndroidLibraries.appCompat
     implementation AndroidLibraries.navigation
     implementation AndroidLibraries.navigationFrag
+
+    implementation 'com.github.rizmaulana:SheenValidator:0.2.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 }
