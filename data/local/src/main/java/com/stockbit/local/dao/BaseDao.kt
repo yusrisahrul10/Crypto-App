@@ -1,13 +1,19 @@
 package com.stockbit.local.dao
 
+import androidx.paging.DataSource
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import com.stockbit.local.entity.CryptoEntity
+import io.reactivex.Single
 
-abstract class BaseDao<T> {
+@Dao
+interface BaseDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    protected abstract suspend fun insert(users: List<T>)
+    fun insert(crypto: List<CryptoEntity>)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    protected abstract suspend fun insert(user: T)
+    @Query("SELECT * from crypto")
+    fun getData() : DataSource.Factory<Int, CryptoEntity>
 }

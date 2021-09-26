@@ -24,4 +24,7 @@ dependencies {
     implementation Libraries.paging
     implementation Libraries.pagingRx
 
+    kapt Libraries.roomCompiler
+    implementation Libraries.roomRunTime
+    implementation Libraries.roomKtx
 }

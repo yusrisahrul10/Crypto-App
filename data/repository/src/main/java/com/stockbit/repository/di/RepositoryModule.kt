@@ -1,11 +1,12 @@
 package com.stockbit.repository.di
 
 import androidx.paging.PagedList
+import com.stockbit.local.AppDatabase
 import com.stockbit.remote.factory.Factory
 import com.stockbit.repository.AppDispatchers
 import com.stockbit.repository.ExampleRepository
-import com.stockbit.repository.ExampleRepositoryImpl
 import com.stockbit.repository.RepositoryImpl
+import com.stockbit.repository.local.LocalRepository
 import com.stockbit.repository.remote.RemoteRepository
 import dagger.Module
 import dagger.Provides
@@ -36,9 +37,19 @@ class RepositoryModule {
 
     @Provides
     @ViewModelScoped
+    fun provideLocalRepository(
+        database : AppDatabase,
+        config : PagedList.Config
+    ) : LocalRepository =
+        LocalRepository(database, config)
+
+    @Provides
+    @ViewModelScoped
     fun provideDataRepository(
-        remoteRepository: RemoteRepository
+        remoteRepository: RemoteRepository,
+        localRepository: LocalRepository
     ) : RepositoryImpl = RepositoryImpl(
-        remoteRepository
+        remoteRepository,
+        localRepository
     )
 }

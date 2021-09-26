@@ -43,4 +43,7 @@ dependencies {
     implementation Libraries.retrofit
     implementation Libraries.retrofitGsonConverter
     implementation Libraries.httpLoggingInterceptor
+    kapt Libraries.roomCompiler
+    implementation Libraries.roomRunTime
+    implementation Libraries.roomKtx
 }

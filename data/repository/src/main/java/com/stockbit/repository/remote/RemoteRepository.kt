@@ -3,6 +3,7 @@ package com.stockbit.repository.remote
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import com.stockbit.local.entity.CryptoEntity
 import com.stockbit.model.DataCrypto
 import com.stockbit.remote.factory.Factory
 import com.stockbit.remote.state.CryptoState
@@ -34,6 +35,13 @@ class RemoteRepository @Inject constructor(
         }
     }
 
-    override fun getDisposible(): CompositeDisposable = disposable
+    override fun getCrypto(data: MutableLiveData<PagedList<CryptoEntity>>) {
+        throw UnsupportedOperationException()
+    }
 
+    override fun insertCrypto(data: List<CryptoEntity>) {
+        throw UnsupportedOperationException()
+    }
+
+    override fun getDisposible(): CompositeDisposable = disposable
 }
