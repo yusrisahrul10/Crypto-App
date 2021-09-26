@@ -1,6 +1,7 @@
 package com.stockbit.hiring.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +11,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.stockbit.hiring.R
 import com.stockbit.hiring.databinding.FragmentWatchlistBinding
 import com.stockbit.hiring.ui.adapter.CryptoAdapter
-import com.stockbit.model.DataCrypto
 import com.stockbit.remote.state.CryptoState
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,7 +26,7 @@ class WatchlistFragment : Fragment() {
     }
 
     private val cryptoAdapter: CryptoAdapter by lazy {
-        CryptoAdapter()
+        CryptoAdapter(requireContext())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,10 +52,7 @@ class WatchlistFragment : Fragment() {
         initView()
         initViewModel()
         initData()
-
     }
-
-
 
     private fun initData() {
         viewModel.getListCrypto()
@@ -71,7 +67,6 @@ class WatchlistFragment : Fragment() {
             }
         })
         viewModel.data.observe(viewLifecycleOwner, Observer(cryptoAdapter::submitList))
-
     }
 
     private fun initView() {
@@ -82,17 +77,28 @@ class WatchlistFragment : Fragment() {
                     requireContext(), LinearLayoutManager.VERTICAL ,false)
                 it.setHasFixedSize(true)
             }
+
+            swipeRefresh.setOnRefreshListener {
+                swipeRefresh.isRefreshing = true
+                viewModel.getListCrypto()
+            }
         }
     }
 
     private fun isLoading(loading: Boolean) {
         with(binding) {
             if (loading) {
-                rvCrypto.visibility = View.INVISIBLE
-                progressBar.visibility = View.VISIBLE
+                if (cryptoAdapter.currentList.isNullOrEmpty()) {
+                    rvCrypto.visibility = View.INVISIBLE
+                    progressBar.visibility = View.VISIBLE
+                } else {
+                    rvCrypto.visibility = View.VISIBLE
+                    progressBar.visibility = View.INVISIBLE
+                }
             } else {
                 rvCrypto.visibility = View.VISIBLE
                 progressBar.visibility = View.INVISIBLE
+                swipeRefresh.isRefreshing = false
             }
         }
     }

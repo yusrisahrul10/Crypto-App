@@ -1,5 +1,6 @@
 package com.stockbit.hiring.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -47,6 +48,7 @@ class LoginFragment : Fragment() {
         sheenValidator.setOnValidatorListener {
             val action = LoginFragmentDirections.actionLoginFragmentToWatchListFragment()
             findNavController().navigate(action)
+//            startActivity(Intent(requireContext(), WatchlistActivity::class.java))
         }
     }
 
