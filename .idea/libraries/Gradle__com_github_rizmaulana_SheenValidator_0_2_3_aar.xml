@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.rizmaulana:SheenValidator:0.2.3@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94371cd2738c4b52b8f10bd33d08009a/jetified-SheenValidator-0.2.3/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94371cd2738c4b52b8f10bd33d08009a/jetified-SheenValidator-0.2.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94371cd2738c4b52b8f10bd33d08009a/jetified-SheenValidator-0.2.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/67670993d80142c2b2c2306db4855f16/jetified-SheenValidator-0.2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/67670993d80142c2b2c2306db4855f16/jetified-SheenValidator-0.2.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/67670993d80142c2b2c2306db4855f16/jetified-SheenValidator-0.2.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

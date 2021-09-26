@@ -75,7 +75,6 @@ class WatchlistFragment : Fragment() {
                 it.adapter = cryptoAdapter
                 it.layoutManager = LinearLayoutManager(
                     requireContext(), LinearLayoutManager.VERTICAL ,false)
-                it.setHasFixedSize(true)
             }
 
             swipeRefresh.setOnRefreshListener {
@@ -104,6 +103,7 @@ class WatchlistFragment : Fragment() {
     }
 
     private fun showError() {
+        binding.swipeRefresh.isRefreshing = false
         Toast.makeText(requireContext(), "Error. Please Try Again", Toast.LENGTH_SHORT).show()
     }
 

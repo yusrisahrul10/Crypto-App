@@ -1,7 +1,6 @@
 package com.stockbit.remote.base
 
 import com.stockbit.remote.ExampleService
-import com.stockbit.remote.di.createRemoteModule
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
@@ -31,7 +30,7 @@ abstract class BaseTest: KoinTest {
 
     // CONFIGURATION
     private fun configureDi(){
-        startKoin {listOf(createRemoteModule(mockServer.url("/").toString()))}
+//        startKoin {listOf(createRemoteModule(mockServer.url("/").toString()))}
     }
 
     private fun configureMockServer(){
